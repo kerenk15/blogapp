@@ -3,7 +3,7 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('postController', function( $scope , postsData){
+	app.controller('postController', function( $scope , postsData , $location){
 		postsData
 			.success(function(data , status) {
    				$scope.postsData = data.posts;
@@ -12,16 +12,19 @@
 				console.log(status , data);
 			});
 
-		$scope.getDate = function(post){
-			console.log(post);
-			/*post = 1417384800000;*/
-			var dateN = new Date(post);
-			dateN = dateN.toDateString(post);
-			console.log(dateN);
-   			return dateN;
-		};
+	$scope.openPost = function(src) {
+
+		var url = src.replace(/[\s]/g, '');
+
+		// src.slice(11, -5);
+		// url = url.split (' ');
+
+		console.log(url);
+		/*var path = '#/post/';
+		$location.search();
+		$location.path('src').replace();*/
+	};
 
 
 	});
-
 }());

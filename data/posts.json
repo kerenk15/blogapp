@@ -55,20 +55,20 @@
 			"description": ""
 		},
 		{
-			"title": "jQuery - Events, AJAX",
-			"author": "Amit Choukroun",
-			"date": "1417557600000",
-			"tags": ["JavaScript", "jQuery"],
-			"source": "data/posts/jQuery - Events, AJAX.html",
-			"image": "http://placehold.it/900x300",
-			"description": ""
-		},
-		{
 			"title": "jQuery - Selectors, DOM",
 			"author": "Amit Choukroun",
 			"date": "1417384800000",
 			"tags": ["JavaScript", "jQuery"],
 			"source": "data/posts/jQuery - Selectors, DOM.html",
+			"image": "http://placehold.it/900x300",
+			"description": ""
+		},
+		{
+			"title": "jQuery - Events, AJAX",
+			"author": "Amit Choukroun",
+			"date": "1417557600000",
+			"tags": ["JavaScript", "jQuery"],
+			"source": "data/posts/jQuery - Events, AJAX.html",
 			"image": "http://placehold.it/900x300",
 			"description": ""
 		}

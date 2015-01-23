@@ -4,7 +4,7 @@
 	var app = angular.module('blogApp', ['ngRoute']);
 
     // configure our routes
-    app.config(function($routeProvider) {
+    app.config(function($routeProvider , $locationProvider) {
         $routeProvider
 
             .when('/', {
@@ -26,6 +26,9 @@
             .otherwise({
                 redirectTo: '/posts'
             });
+
+        /*app.get('*', routes.index);*/
+        $locationProvider.html5Mode(true).hashPrefix('!');
 
     });
 
