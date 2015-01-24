@@ -4,7 +4,7 @@
 	var app = angular.module('blogApp', ['ngRoute']);
 
     // configure our routes
-    app.config(function($routeProvider , $locationProvider) {
+    app.config(function($routeProvider) {
         $routeProvider
 
             .when('/', {
@@ -17,18 +17,27 @@
                 controller  : 'postController'
             })
 
+            // route for different page
+            .when( '/posts/:page',{
+                templateUrl : 'app/posts/allPosts.html',
+                controller  : 'pageController'
+            })
+
+            // route for the single post page
+            .when( '/post/:title',{
+                templateUrl : 'app/posts/singlePost.html',
+                controller  : 'singlePostController'
+            })
+
             // route for the admin page
-            /*.when('/admin', {
+            .when('/admin', {
                 templateUrl : 'app/admin/admin.html',
                 controller  : ''
-            })*/
+            })
 
             .otherwise({
                 redirectTo: '/posts'
             });
-
-        /*app.get('*', routes.index);*/
-        $locationProvider.html5Mode(true).hashPrefix('!');
 
     });
 

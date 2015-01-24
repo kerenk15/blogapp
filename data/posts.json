@@ -1,7 +1,7 @@
 {
 	"posts": [
 		{
-			"title": "AngularJS - Controllers",
+			"title": "1AngularJS - Controllers",
 			"author": "Ilan Cohen",
 			"date": "1421186400000",
 			"tags": ["JavaScript", "AngularJS"],
@@ -10,7 +10,7 @@
 			"description": ""
 		},
 		{
-			"title": "AngularJS - Modules",
+			"title": "2AngularJS - Modules",
 			"author": "Ilan Cohen",
 			"date": "1421186400000",
 			"tags": ["JavaScript", "AngularJS"],
@@ -19,7 +19,7 @@
 			"description": ""
 		},
 		{
-			"title": "AngularJS - Routes",
+			"title": "3AngularJS - Routes",
 			"author": "Ilan Cohen",
 			"date": "1421186400000",
 			"tags": ["JavaScript", "AngularJS"],
@@ -28,7 +28,7 @@
 			"description": ""
 		},
 		{
-			"title": "AngularJS - Services",
+			"title": "4AngularJS - Services",
 			"author": "Ilan Cohen",
 			"date": "1421186400000",
 			"tags": ["JavaScript", "AngularJS"],
@@ -37,7 +37,7 @@
 			"description": ""
 		},
 		{
-			"title": "Grunt - Custom Tasks",
+			"title": "5Grunt - Custom Tasks",
 			"author": "Alex Ilyaev",
 			"date": "1418162400000",
 			"tags": ["Grunt", "Tools"],
@@ -46,7 +46,7 @@
 			"description": ""
 		},
 		{
-			"title": "Grunt - Intro",
+			"title": "6Grunt - Intro",
 			"author": "Alex Ilyaev",
 			"date": "1418162400000",
 			"tags": ["Grunt", "Tools"],
@@ -55,7 +55,7 @@
 			"description": ""
 		},
 		{
-			"title": "jQuery - Selectors, DOM",
+			"title": "7jQuery - Selectors, DOM",
 			"author": "Amit Choukroun",
 			"date": "1417384800000",
 			"tags": ["JavaScript", "jQuery"],
@@ -64,7 +64,7 @@
 			"description": ""
 		},
 		{
-			"title": "jQuery - Events, AJAX",
+			"title": "8jQuery - Events, AJAX",
 			"author": "Amit Choukroun",
 			"date": "1417557600000",
 			"tags": ["JavaScript", "jQuery"],

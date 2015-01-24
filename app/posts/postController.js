@@ -3,7 +3,7 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('postController', function( $scope , postsData , $location){
+	app.controller('postController', function( $scope , postsData){
 		postsData
 			.success(function(data , status) {
    				$scope.postsData = data.posts;
@@ -12,19 +12,11 @@
 				console.log(status , data);
 			});
 
-	$scope.openPost = function(src) {
+	$scope.start = 0;
+	$scope.end = $scope.start + 3;
 
-		var url = src.replace(/[\s]/g, '');
-
-		// src.slice(11, -5);
-		// url = url.split (' ');
-
-		console.log(url);
-		/*var path = '#/post/';
-		$location.search();
-		$location.path('src').replace();*/
-	};
 
 
 	});
+
 }());

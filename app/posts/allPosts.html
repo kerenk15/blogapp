@@ -3,11 +3,12 @@
 	<h1 class="page-header">All Posts</h1>
 
 	<!-- Begin Post -->
-	<article ng-repeat="post in postsData | orderBy: 'date' : true | limitTo:3"}}>
 
+	<article
+			 ng-repeat="post in postsData | orderBy: 'date' : true | slice:start:end"}}>
 		<header>
 			<h2>
-				<a href="post.html" ng-click="openPost(post.source)"  >{{post.title}}</a>
+				<a href="#/post/{{post.title | nospace}}">{{post.title}}</a>
 			</h2>
 
 			<p>
@@ -50,7 +51,7 @@
 			<a href="#">&larr; Older</a>
 		</li>
 		<li class="next">
-			<a href="#">Newer &rarr;</a>
+			<a href="#/posts/{{page(start , end)}}">Newer &rarr;</a>
 		</li>
 	</ul>
 </section>
