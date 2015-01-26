@@ -90,12 +90,12 @@
 					</div>
 
 					<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
-					<div class="list-group">
-						<a href="#" class="list-group-item">
+					<div class="list-group"  ng-repeat="post in postsData">
+						<a href="#" class="list-group-item" ng-repeat="tag in post.tags">
 							<span class="badge">6</span>
-							JavaScript
+							{{tag}}AngularJS
 						</a>
-						<a href="#" class="list-group-item">
+						<!-- <a href="#" class="list-group-item">
 							<span class="badge">4</span>
 							AngularJS
 						</a>
@@ -110,7 +110,7 @@
 						<a href="#" class="list-group-item">
 							<span class="badge">2</span>
 							jQuery
-						</a>
+						</a> -->
 					</div>
 
 					<h4><small class="glyphicon glyphicon-user"></small> Author</h4>

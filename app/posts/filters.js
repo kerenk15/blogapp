@@ -5,6 +5,7 @@
 
 	app.filter('nospace', function () {
 	    return function (value) {
+	        value = (!value) ? '' : value.replace(/,/g, '-');
 	        return (!value) ? '' : value.replace(/ /g, '');
 	    };
 	});
