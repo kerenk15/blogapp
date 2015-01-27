@@ -62,7 +62,7 @@
 			<ng-view></ng-view>
 			<!-- Blog Sidebar Widgets Column -->
 
-			<aside class="col-md-4">
+			<aside class="col-md-4" ng-controller="sideBarController">
 
 				<!-- Blog Search Well -->
 				<div class="well">
@@ -88,63 +88,40 @@
 							Show All Posts
 						</a>
 					</div>
+					<div >
+						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
+						<div class="list-group" ng-repeat="post in postsData">
+							<a href="#" class="list-group-item" ng-repeat="tag in post.tags">
+								<span class="badge" ng-if=""><!-- {{count(tag , num)}} --></span>
+								 {{tag}}
+							</a>
+						</div>
 
-					<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
-					<div class="list-group"  ng-repeat="post in postsData">
-						<a href="#" class="list-group-item" ng-repeat="tag in post.tags">
-							<span class="badge">6</span>
-							{{tag}}AngularJS
-						</a>
-						<!-- <a href="#" class="list-group-item">
-							<span class="badge">4</span>
-							AngularJS
-						</a>
-						<a href="#" class="list-group-item">
-							<span class="badge">2</span>
-							Grunt
-						</a>
-						<a href="#" class="list-group-item">
-							<span class="badge">2</span>
-							Tools
-						</a>
-						<a href="#" class="list-group-item">
-							<span class="badge">2</span>
-							jQuery
-						</a> -->
-					</div>
+						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
+						<div class="list-group">
+							<a href="#" class="list-group-item">
+								<span class="badge">4</span>
+								{{post.author}}
+							</a>
+						</div>
 
-					<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
-					<div class="list-group">
-						<a href="#" class="list-group-item">
-							<span class="badge">4</span>
-							Ilan Cohen
-						</a>
-						<a href="#" class="list-group-item">
-							<span class="badge">2</span>
-							Alex Ilyaev
-						</a>
-						<a href="#" class="list-group-item">
-							<span class="badge">2</span>
-							Amit Choukroun
-						</a>
-					</div>
-
-					<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-					<div class="list-group">
-						<span href="#" class="list-group-item disabled">
-							2015
-						</span>
-						<a href="#" class="list-group-item">
-							<span class="badge">4</span>
-							January
-						</a>
-						<span href="#" class="list-group-item disabled">
-							2014
-						</span>
-						<a href="#" class="list-group-item">
-							<span class="badge">4</span>
-							December
-						</a>
+						<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
+						<div class="list-group">
+							<span href="#" class="list-group-item disabled">
+								2015
+							</span>
+							<a href="#" class="list-group-item">
+								<span class="badge">4</span>
+								January
+							</a>
+							<span href="#" class="list-group-item disabled">
+								2014
+							</span>
+							<a href="#" class="list-group-item">
+								<span class="badge">4</span>
+								December
+							</a>
+						</div>
 					</div>
 				</div>
 			</aside>
@@ -177,10 +154,13 @@
 	<!-- App -->
 	<script src="app/app.js"></script>
 	<script src="app/posts/postsService.js"></script>
-	<script src="app/posts/postController.js"></script>
+	<script src="app/posts/sideBarController.js"></script>
+	<script src="app/posts/postsController.js"></script>
 	<script src="app/posts/filters.js"></script>
 	<script src="app/posts/singlePostController.js"></script>
 	<script src="app/posts/pageController.js"></script>
+
+
 
 
 

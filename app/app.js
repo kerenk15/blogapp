@@ -11,16 +11,10 @@
                 redirectTo: '/posts'
             })
 
-            // route for the home page
-            .when( '/posts',{
+            // route for the home page / different page
+            .when( '/posts/:page?',{
                 templateUrl : 'app/posts/allPosts.html',
-                controller  : 'postController'
-            })
-
-            // route for different page
-            .when( '/posts/:page',{
-                templateUrl : 'app/posts/allPosts.html',
-                controller  : 'pageController'
+                controller  : 'postsController'
             })
 
             // route for the single post page

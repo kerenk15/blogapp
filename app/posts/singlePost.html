@@ -10,32 +10,32 @@
 			<!-- Begin Post -->
 			<article>
 				<header>
-					<h1 class="page-header">AngularJS - Controllers</h1>
+					<h1 class="page-header">{{postData.title}}</h1>
 
 					<p>
 						<small class="glyphicon glyphicon-user"></small>
-						by <a href="#">Ilan Cohen</a>
+						by <a href="#">{{postData.author}}</a>
 					</p>
 					<p>
 						<small class="glyphicon glyphicon-time"></small>
-						Posted on 14 Jan, 2015
+						Posted on {{postData.date | date : 'dd MMM , yyyy'}}
 					</p>
 					<p>
 						<b>Tags:&nbsp;</b>
-						<a href="#" class="label label-default">JavaScript</a>
-						<a href="#" class="label label-default">AngularJS</a>
+						<a href="#" class="label label-default" ng-repeat="tag in postData.tags">{{tag}}</a>
 					</p>
 				</header>
 				<hr>
 
 				<figure>
-					<img class="img-responsive" src="http://placehold.it/900x300"
+					<img class="img-responsive" src="{{postData.image}}"
 						alt="">
 				</figure>
 				<hr>
 
 				<!-- Post Content -->
-				<div ng-include src="'/path/to/template.html'"></div>
+				<div ng-include src="postData.source"></div>
+
 				<!-- End of Post Content -->
 
 			</article>
