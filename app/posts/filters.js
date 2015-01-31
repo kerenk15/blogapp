@@ -3,10 +3,12 @@
 
 	var app = angular.module('blogApp');
 
-	app.filter('nospace', function () {
+	app.filter('noSpace', function () {
 	    return function (value) {
-	        value = (!value) ? '' : value.replace(/,/g, '-');
-	        return (!value) ? '' : value.replace(/ /g, '');
+	        value = (!value) ? '' : value.replace(/,| /g, '-');
+	        value = (!value) ? '' : value.replace(/---/g, '-');
+
+	        return value;
 	    };
 	});
 

@@ -11,7 +11,7 @@
 
 				// Get post by title
 				data.posts.forEach(function (post) {
-					if ($filter('nospace')(post.title) === postTitle) {
+					if ($filter('noSpace')(post.title) === postTitle) {
 						$scope.postData = post;
 						console.log($scope.postData);
 					}

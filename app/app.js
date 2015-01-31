@@ -12,7 +12,7 @@
             })
 
             // route for the home page / different page
-            .when( '/posts/:page?',{
+            .when( '/posts/:page?:author?:category?:month?',{
                 templateUrl : 'app/posts/allPosts.html',
                 controller  : 'postsController'
             })

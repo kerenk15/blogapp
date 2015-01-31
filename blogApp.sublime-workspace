@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"postsData"
+			],
+			[
+				"sta",
+				"start"
+			],
+			[
+				"s",
+				"start"
+			],
+			[
+				"po",
+				"postSrc"
+			],
+			[
+				"post",
+				"postS"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"fo",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"posts",
+				"postsData"
+			],
+			[
 				"stor",
 				"storageFolders"
 			],
@@ -264,10 +296,6 @@
 				"bottom"
 			],
 			[
-				"fo",
-				"font-size"
-			],
-			[
 				"ba",
 				"background"
 			],
@@ -344,10 +372,6 @@
 				"list-style"
 			],
 			[
-				"pos",
-				"position"
-			],
-			[
 				"bore",
 				"border"
 			],
@@ -371,7 +395,79 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8531,
+				"buffer_size": 4791,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/posts/singlePostController.js",
+			"settings":
+			{
+				"buffer_size": 553,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/posts/sideBarController.js",
+			"settings":
+			{
+				"buffer_size": 584,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/posts/postsController.js",
+			"settings":
+			{
+				"buffer_size": 373,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/posts/pageController.js",
+			"settings":
+			{
+				"buffer_size": 460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app.js",
+			"settings":
+			{
+				"buffer_size": 947,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/posts/allPosts.html",
+			"settings":
+			{
+				"buffer_size": 1472,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/posts/filters.js",
+			"settings":
+			{
+				"buffer_size": 405,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/posts/postsService.js",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "data/posts.json",
+			"settings":
+			{
+				"buffer_size": 2062,
 				"line_ending": "Unix"
 			}
 		}
@@ -412,6 +508,18 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/singlePost.html",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/postController.js",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/data/posts.json",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/post.html",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/index.html",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/singePostController.js",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/SingePostController.js",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/SinglePost.html",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/mainController.js",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/posts/MainController.js",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/app/admin/admin.html",
+		"/C/Users/Shalom/Documents/GitHub/blogapp/README.html",
 		"/C/Users/Shalom/Desktop/Netcraft/שיעורים/Angular/css/main.css",
 		"/C/Users/Shalom/Desktop/Netcraft/שיעורים/Angular/.jshintrc",
 		"/C/Users/Shalom/Desktop/Netcraft/שיעורים/Angular/js/main.js",
@@ -493,7 +601,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -507,6 +615,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"http://localhost:9001/%7B%7Bpost.image%7D%7D",
+			"page",
+			"contr",
+			"img",
+			"search",
+			"ng-con",
+			"titls",
 			"reg",
 			"notif",
 			"addto",
@@ -627,14 +742,7 @@
 			"TodoElm",
 			"todoElm",
 			"TodoElm",
-			"todoElm",
-			"			todoElm,\n",
-			"todoHandler",
-			"reports-form",
-			"todos",
-			"Todos",
-			"todos",
-			"Todos"
+			"todoElm"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -652,7 +760,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -661,26 +769,285 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8531,
+						"buffer_size": 4791,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3207,
+								3207
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/posts/singlePostController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 553,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								316,
+								316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/posts/sideBarController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/posts/postsController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/posts/pageController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								281
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/posts/allPosts.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1010,
+								1046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/posts/filters.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/posts/postsService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "data/posts.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1580,
+								1586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

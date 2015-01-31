@@ -8,7 +8,7 @@
 			 ng-repeat="post in postsData | orderBy: 'date' : true | slice:start:end"}}>
 		<header>
 			<h2>
-				<a href="#/post/{{post.title | nospace}}">{{post.title}}</a>
+				<a href="#/post/{{post.title | noSpace}}">{{post.title}}</a>
 			</h2>
 
 			<p>
@@ -37,7 +37,7 @@
 				<a href="#" class="label label-default" ng-repeat="tag in post.tags">{{tag}}</a>
 			</p>
 
-			<a class="btn btn-primary pull-right" href="#/post/{{post.title | nospace}}">
+			<a class="btn btn-primary pull-right" href="#/post/{{post.title | noSpace}}">
 				Read More <i class="glyphicon glyphicon-chevron-right"></i>
 			</a>
 		</footer>

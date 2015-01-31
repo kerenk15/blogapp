@@ -84,42 +84,35 @@
 
 					<div class="list-group">
 						<a href="#" class="list-group-item active">
-							<span class="badge">8</span>
+							<span class="badge">{{postsData.length}}</span>
 							Show All Posts
 						</a>
 					</div>
 					<div >
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
-						<div class="list-group" ng-repeat="post in postsData">
-							<a href="#" class="list-group-item" ng-repeat="tag in post.tags">
-								<span class="badge" ng-if=""><!-- {{count(tag , num)}} --></span>
-								 {{tag}}
+						<div class="list-group">
+							<a href="#/posts?category={{key | lowercase | noSpace}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
+								<span class="badge">{{value}}</span>
+								 {{key}}
 							</a>
 						</div>
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#" class="list-group-item">
-								<span class="badge">4</span>
-								{{post.author}}
+							<a href="#/posts?author={{key | lowercase | noSpace}}" class="list-group-item" ng-repeat="(key, value) in navCount.Author">
+								<span class="badge">{{value}}</span>
+								{{key}}
 							</a>
 						</div>
 
 						<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-						<div class="list-group">
-							<span href="#" class="list-group-item disabled">
-								2015
+						<div class="list-group" ng-repeat="(key, value) in navCount.Year">
+							<span href="#" class="list-group-item disabled" >
+                      			{{key}}
 							</span>
-							<a href="#" class="list-group-item">
-								<span class="badge">4</span>
-								January
-							</a>
-							<span href="#" class="list-group-item disabled">
-								2014
-							</span>
-							<a href="#" class="list-group-item">
-								<span class="badge">4</span>
-								December
+							<a href="#/posts?month={{key | lowercase}}" class="list-group-item" ng-repeat="(key, value) in value">
+								<span class="badge">{{value}}</span>
+								{{key}}
 							</a>
 						</div>
 					</div>
