@@ -3,7 +3,7 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('sideBarController', function( $scope , postsData, $filter){
+	app.controller('sideBarController', function( $scope , postsData, $filter , $location){
 		postsData
 			.success(function(data , status) {
    				$scope.postsData = data.posts;
@@ -78,6 +78,15 @@
 		    return (navCount) ;
 		};
 
+    	$scope.submit = function() {
+	        if ($scope.text) {
+	        	$location.search('');
+	        	this.text = $filter('cleanTitle')(this.text);
+				this.text = $filter('lowercase')(this.text);
+	            $location.search('search', this.text);
+	       		$scope.text = '';
+	        }
+    	};
 
 	});
 }());

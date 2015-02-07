@@ -14,7 +14,7 @@
 
 					<p>
 						<small class="glyphicon glyphicon-user"></small>
-						by <a href="#">{{postData.author}}</a>
+						by <a href="#/posts?author={{postData.author | lowercase | cleanTitle}}">{{postData.author}}</a>
 					</p>
 					<p>
 						<small class="glyphicon glyphicon-time"></small>
@@ -22,7 +22,7 @@
 					</p>
 					<p>
 						<b>Tags:&nbsp;</b>
-						<a href="#" class="label label-default" ng-repeat="tag in postData.tags">{{tag}}</a>
+						<a href="#/posts?category={{tag | lowercase | cleanTitle}}" class="label label-default" ng-repeat="tag in postData.tags">{{tag}}</a>
 					</p>
 				</header>
 				<hr>
@@ -92,7 +92,7 @@
 		<aside class="col-md-4">
 
 			<!-- Blog Search Well -->
-			<div class="well">
+			<!-- <div class="well">
 				<h4>Search</h4>
 				<div class="input-group">
 					<input type="text" class="form-control">
@@ -102,8 +102,8 @@
 					</button>
 					</span>
 				</div>
-				<!-- /.input-group -->
-			</div>
+				/.input-group
+			</div> -->
 
 			<!-- Blog Categories Well -->
 			<!-- <div class="well">

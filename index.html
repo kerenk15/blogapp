@@ -67,14 +67,16 @@
 				<!-- Blog Search Well -->
 				<div class="well">
 					<h4>Search</h4>
-					<div class="input-group">
-						<input type="text" class="form-control">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="button">
-								<span class="glyphicon glyphicon-search"></span>
-						</button>
-						</span>
-					</div>
+					<form ng-submit="submit()">
+						<div class="input-group">
+							<input type="text" ng-model="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>
+					</form>
 					<!-- /.input-group -->
 				</div>
 
@@ -83,7 +85,7 @@
 					<h3>Filter Posts</h3>
 
 					<div class="list-group">
-						<a href="#" class="list-group-item active">
+						<a href="#/posts" class="list-group-item active">
 							<span class="badge">{{postsData.length}}</span>
 							Show All Posts
 						</a>
@@ -91,7 +93,7 @@
 					<div >
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
-							<a href="#/posts?category={{key | lowercase | noSpace}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
+							<a href="#/posts?category={{key | lowercase | cleanTitle}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
 								<span class="badge">{{value}}</span>
 								 {{key}}
 							</a>
@@ -99,7 +101,7 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts?author={{key | lowercase | noSpace}}" class="list-group-item" ng-repeat="(key, value) in navCount.Author">
+							<a href="#/posts?author={{key | lowercase | cleanTitle}}" class="list-group-item"  ng-repeat="(key, value) in navCount.Author" " >
 								<span class="badge">{{value}}</span>
 								{{key}}
 							</a>

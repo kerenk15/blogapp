@@ -11,11 +11,18 @@
                 redirectTo: '/posts'
             })
 
-            // route for the home page / different page
-            .when( '/posts/:page?:author?:category?:month?',{
+            // route for the home page
+            .when( '/posts',{
                 templateUrl : 'app/posts/allPosts.html',
                 controller  : 'postsController'
             })
+
+            // route for the filtered pages
+            /*.when( '/posts/?author=:author?category=:category?month=:month?',{
+                templateUrl : 'app/posts/allPosts.html',
+                controller  : 'fillteredPostsController'
+            })*/
+
 
             // route for the single post page
             .when( '/post/:title',{

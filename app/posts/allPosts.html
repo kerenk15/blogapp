@@ -8,12 +8,12 @@
 			 ng-repeat="post in postsData | orderBy: 'date' : true | slice:start:end"}}>
 		<header>
 			<h2>
-				<a href="#/post/{{post.title | noSpace}}">{{post.title}}</a>
+				<a href="#/post/{{post.title | cleanTitle}}">{{post.title}}</a>
 			</h2>
 
 			<p>
 				<small class="glyphicon glyphicon-user"></small>
-				by <a href="#">{{post.author}}</a>
+				by <a href="#/posts?author={{post.author | lowercase | cleanTitle}}">{{post.author}}</a>
 			</p>
 			<p>
 				<small class="glyphicon glyphicon-time"></small>
@@ -23,7 +23,7 @@
 		<hr>
 
 		<figure>
-			<img class="img-responsive" src= "{{post.image}}" alt="">
+			<img class="img-responsive" ng-src= "{{post.image}}" alt="">
 		</figure>
 		<hr>
 
@@ -34,10 +34,10 @@
 		<footer class="clearfix">
 			<p class="pull-left" >
 				<b >Tags:&nbsp;</b>
-				<a href="#" class="label label-default" ng-repeat="tag in post.tags">{{tag}}</a>
+				<a href="#/posts?category={{tag | lowercase | cleanTitle}}" class="label label-default" ng-repeat="tag in post.tags">{{tag}}</a>
 			</p>
 
-			<a class="btn btn-primary pull-right" href="#/post/{{post.title | noSpace}}">
+			<a class="btn btn-primary pull-right" href="#/post/{{post.title | cleanTitle}}">
 				Read More <i class="glyphicon glyphicon-chevron-right"></i>
 			</a>
 		</footer>
