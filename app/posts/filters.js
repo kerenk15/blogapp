@@ -20,46 +20,39 @@
 
 	app.filter('sidebarfilter' ,function(){
 		return function (data, obj , $filter ) {
-			var filteredArr , tags , i , searchValue;
-			console.log(obj);
+			var arr = [];
 
-			if (obj.search){
-				searchValue = obj.search;
-			}
+			if (obj) {
 
-			if (obj.author){
-				for (i = 0; i < data.length; i++) {
-					data[i].author = $filter('cleanTitle')(data[i].author);
-					data[i].author = $filter('lowercase')(data[i].author);
+				if (obj.search){
+				return ($filter('filter')(data, obj.search));
 				}
-				searchValue = obj.author;
-			}
 
-			if (obj.category){
-				for (i = 0; i < data.length; i++) {
-					tags = data[i].tags;
-					for (var k = 0; k < tags.length; k++) { // filter inside tags array inside data
-						tags[k] = $filter('cleanTitle')(tags[k]);
-						tags[k] = $filter('lowercase')(tags[k]);
+				if (obj.author){
+					for (var i = 0; i < data.length; i++) {
+						if ($filter('cleanTitle')(data[i].author).toLowerCase() === obj.author){
+							arr.push(data[i]);
+						}
 					}
-					console.log(data[i].tags);
+					return arr;
 				}
-				searchValue = obj.category;
-				console.log(data, searchValue);
+
+				if (obj.category){
+					console.log(obj.category , ($filter('filter')(data, obj.category)));
+					return ($filter('filter')(data, obj.category));
+				}
+
+				if (obj.month){
+					for (var j = 0; j < data.length; j++) {
+						if ($filter('date')(data[j].date , 'MMMM').toLowerCase() === obj.month){
+							arr.push(data[j]);
+						}
+					}
+					return arr;
+				}
 			}
 
-			if (obj.month){
-				for (i = 0; i < data.length; i++) {
-					data[i].date = $filter('date')(data[i].date , 'MMMM');
-					data[i].date = $filter('lowercase')(data[i].date);
-					console.log(data[i].date);
-				}
-				searchValue = obj.month;
-			}
-
-			filteredArr = $filter('filter')(data, searchValue);
-			console.log(filteredArr);
-			return filteredArr;
+			return data;
 
   		};
 	});

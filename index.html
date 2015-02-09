@@ -101,7 +101,7 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts?author={{key | lowercase | cleanTitle}}" class="list-group-item"  ng-repeat="(key, value) in navCount.Author" " >
+							<a href="#/posts?author={{key | lowercase | cleanTitle}}" class="list-group-item"  ng-repeat="(key, value) in navCount.Author" >
 								<span class="badge">{{value}}</span>
 								{{key}}
 							</a>
@@ -153,7 +153,6 @@
 	<script src="app/posts/postsController.js"></script>
 	<script src="app/posts/filters.js"></script>
 	<script src="app/posts/singlePostController.js"></script>
-	<script src="app/posts/pageController.js"></script>
 
 </body>
 </html>

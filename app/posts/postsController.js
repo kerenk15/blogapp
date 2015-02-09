@@ -7,9 +7,12 @@
 		postsData
 			.success(function(data , status) {
    				var filteredObj = $location.search();
-				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj , $filter)); // sideBar filter
-				$scope.postsInPage($scope.postsData); //move to the next page and the next posts
-				$scope.postsData = ($filter('slice')($scope.postsData , $scope.start , $scope.end)); //show only 3 posts in a page
+   				// sideBar filter
+				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj , $filter));
+				 //move to the next page and the next posts
+				$scope.postsInPage($scope.postsData);
+				 //show only 3 posts in a page
+				$scope.postsData = ($filter('slice')($scope.postsData , $scope.start , $scope.end));
   			})
 			.error(function(data , status){
 				console.log(status , data);
