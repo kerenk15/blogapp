@@ -40,10 +40,10 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="#/posts">All Posts</a>
+					<li >
+						<a href="#/posts"ng-class="isActive('/posts')">Posts</a>
 					</li>
-					<li>
+					<li ng-class="{active:isActive('/admin')}">
 						<a href="#/admin">Admin</a>
 					</li>
 				</ul>
@@ -85,13 +85,13 @@
 					<h3>Filter Posts</h3>
 
 					<div class="list-group">
-						<a href="#/posts" class="list-group-item active">
+						<a href="#/posts" class="list-group-item" ng-class="{active:isActive('/posts')}">
 							<span class="badge">{{postsData.length}}</span>
 							Show All Posts
 						</a>
 					</div>
 					<div >
-						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
+						<h4><small class="glyphicon glyphicon-tag" ></small> Category</h4>
 						<div class="list-group">
 							<a href="#/posts?category={{key | lowercase | cleanTitle}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
 								<span class="badge">{{value}}</span>
@@ -141,8 +141,10 @@
 	<!-- /.container -->
 
 	<!-- Libraries -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.7/angular.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular-route.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-sanitize.min.js"></script>
+
 	<script src="lib/js/jquery.min.js"></script>
 	<script src="lib/js/bootstrap.min.js"></script>
 
@@ -153,6 +155,9 @@
 	<script src="app/posts/postsController.js"></script>
 	<script src="app/posts/filters.js"></script>
 	<script src="app/posts/singlePostController.js"></script>
+	<script src="lib/js/marked.min.js"></script>
+	<script src="app/admin/adminController.js"></script>
+
 
 </body>
 </html>

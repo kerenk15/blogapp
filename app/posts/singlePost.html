@@ -1,184 +1,80 @@
+<!-- Blog Post Content Column -->
 
-<!-- Page Content -->
-<div class="container">
+<section class="col-md-8">
 
-	<div class="row">
+	<!-- Begin Post -->
+	<article>
+		<header>
+			<h1 class="page-header">{{postData.title}}</h1>
+			<p>
+				<small class="glyphicon glyphicon-user"></small>
+				by <a href="#/posts?author={{postData.author | lowercase | cleanTitle}}">{{postData.author}}</a>
+			</p>
+			<p>
+				<small class="glyphicon glyphicon-time"></small>
+				Posted on {{postData.date | date : 'dd MMM , yyyy'}}
+			</p>
+			<p>
+				<b>Tags:&nbsp;</b>
+				<a href="#/{{activeTab}}?category={{tag | lowercase | cleanTitle}}" class="label label-default" ng-repeat="tag in postData.tags">{{tag}}</a>
+			</p>
+		</header>
+		<hr>
 
-		<!-- Blog Post Content Column -->
-		<section class="col-md-8">
+		<!-- Post Content -->
+		<div ng-bind-html="postHtml"></div>
 
-			<!-- Begin Post -->
-			<article>
-				<header>
-					<h1 class="page-header">{{postData.title}}</h1>
+		<!-- End of Post Content -->
 
-					<p>
-						<small class="glyphicon glyphicon-user"></small>
-						by <a href="#/posts?author={{postData.author | lowercase | cleanTitle}}">{{postData.author}}</a>
-					</p>
-					<p>
-						<small class="glyphicon glyphicon-time"></small>
-						Posted on {{postData.date | date : 'dd MMM , yyyy'}}
-					</p>
-					<p>
-						<b>Tags:&nbsp;</b>
-						<a href="#/posts?category={{tag | lowercase | cleanTitle}}" class="label label-default" ng-repeat="tag in postData.tags">{{tag}}</a>
-					</p>
-				</header>
-				<hr>
+	</article>
+	<hr>
+	<!-- End of Post -->
 
-				<figure>
-					<img class="img-responsive" src="{{postData.image}}"
-						alt="">
-				</figure>
-				<hr>
+	<!-- Blog Comments -->
 
-				<!-- Post Content -->
-				<div ng-include src="postData.source"></div>
-
-				<!-- End of Post Content -->
-
-			</article>
-			<hr>
-			<!-- End of Post -->
-
-			<!-- Blog Comments -->
-
-			<!-- Comments Form -->
-			<div class="well">
-				<h4>Leave a Comment:</h4>
-				<form role="form">
-					<div class="form-group">
-						<textarea class="form-control" rows="3"></textarea>
-					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+	<!-- Comments Form -->
+	<div class="well">
+		<h4>Leave a Comment:</h4>
+		<form role="form">
+			<div class="form-group">
+				<textarea class="form-control" rows="3"></textarea>
 			</div>
-
-			<hr>
-
-			<!-- Posted Comments -->
-
-			<!-- Comment -->
-			<div class="media">
-				<a class="pull-left" href="#">
-					<img class="media-object" src="http://placehold.it/64x64" alt="">
-				</a>
-				<div class="media-body">
-					<h4 class="media-heading">Some User
-						<small>14 Jan, 2015</small>
-					</h4>
-					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-				</div>
-			</div>
-			<hr>
-
-			<!-- Comment -->
-			<div class="media">
-				<a class="pull-left" href="#">
-					<img class="media-object" src="http://placehold.it/64x64" alt="">
-				</a>
-				<div class="media-body">
-					<h4 class="media-heading">Some User
-						<small>14 Jan, 2015</small>
-					</h4>
-					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-				</div>
-			</div>
-
-		</section>
-
-		<!-- Blog Sidebar Widgets Column -->
-		<aside class="col-md-4">
-
-			<!-- Blog Search Well -->
-			<!-- <div class="well">
-				<h4>Search</h4>
-				<div class="input-group">
-					<input type="text" class="form-control">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">
-							<span class="glyphicon glyphicon-search"></span>
-					</button>
-					</span>
-				</div>
-				/.input-group
-			</div> -->
-
-			<!-- Blog Categories Well -->
-			<!-- <div class="well">
-				<h3>Filter Posts</h3>
-
-				<div class="list-group">
-					<a href="#" class="list-group-item active">
-						<span class="badge">8</span>
-						Show All Posts
-					</a>
-				</div>
-
-				<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
-				<div class="list-group">
-					<a href="#" class="list-group-item">
-						<span class="badge">6</span>
-						JavaScript
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">4</span>
-						AngularJS
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">2</span>
-						Grunt
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">2</span>
-						Tools
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">2</span>
-						jQuery
-					</a>
-				</div>
-
-				<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
-				<div class="list-group">
-					<a href="#" class="list-group-item">
-						<span class="badge">4</span>
-						Ilan Cohen
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">2</span>
-						Alex Ilyaev
-					</a>
-					<a href="#" class="list-group-item">
-						<span class="badge">2</span>
-						Amit Choukroun
-					</a>
-				</div>
-
-				<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-				<div class="list-group">
-					<span href="#" class="list-group-item disabled">
-						2015
-					</span>
-					<a href="#" class="list-group-item">
-						<span class="badge">4</span>
-						January
-					</a>
-					<span href="#" class="list-group-item disabled">
-						2014
-					</span>
-					<a href="#" class="list-group-item">
-						<span class="badge">4</span>
-						December
-					</a>
-				</div>
-			</div> -->
-		</aside>
-
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
-	<!-- /.row -->
 
 	<hr>
+
+	<!-- Posted Comments -->
+
+	<!-- Comment -->
+	<div class="media">
+		<a class="pull-left" href="#">
+			<img class="media-object" src="http://placehold.it/64x64" alt="">
+		</a>
+		<div class="media-body">
+			<h4 class="media-heading">Some User
+				<small>14 Jan, 2015</small>
+			</h4>
+			<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+		</div>
+	</div>
+	<hr>
+
+	<!-- Comment -->
+	<div class="media">
+		<a class="pull-left" href="#">
+			<img class="media-object" src="http://placehold.it/64x64" alt="">
+		</a>
+		<div class="media-body">
+			<h4 class="media-heading">Some User
+				<small>14 Jan, 2015</small>
+			</h4>
+			<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+		</div>
+	</div>
+
+</section>
+
 
 

@@ -4,26 +4,32 @@
 	var app = angular.module('blogApp');
 
 	app.controller('postsController', function( $scope , postsData , $filter , $location ,  $routeParams){
-		postsData
-			.success(function(data , status) {
+
+		postsData.get().then(function(data) {
+				$scope.activeTab = $location.path().slice(1);
+				console.log($scope.activeTab);
    				var filteredObj = $location.search();
    				// sideBar filter
-				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj , $filter));
+				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj));
+				//save posts length
+				$scope.postsLength = $scope.postsData.length;
 				 //move to the next page and the next posts
 				$scope.postsInPage($scope.postsData);
 				 //show only 3 posts in a page
 				$scope.postsData = ($filter('slice')($scope.postsData , $scope.start , $scope.end));
-  			})
-			.error(function(data , status){
-				console.log(status , data);
-			});
+  			});
 
 		$scope.postsInPage = function(postsData){
-			var page = $routeParams; // check on witch page are we
+			var  page = parseInt($routeParams.pageNum); // check on witch page are we
 
-			if (parseInt(page.pageNum) > 1){ //if we are not on the first page
-				$scope.start = ((parseInt(page.pageNum) - 1) * 3); //move till the next 3 posts
-				$scope.pageNum = parseInt(page.pageNum); //update the page bumber
+			//dealing with page 1
+			if(page === 1){
+				$location.path('/posts');
+			}
+
+			if (page > 1){ //if we are not on the first page
+				$scope.start = ((page - 1) * 3); //move till the next 3 posts
+				$scope.pageNum = page; //update the page bumber
 				$scope.nextPosts = true;
 			}else{ // if we are on the first page
 				$scope.start = 0;
@@ -38,6 +44,12 @@
 				$scope.previousPosts = true;
 			}
 		};
+
+		$scope.isActive = function(route) {
+			console.log(route , $location.path());
+			console.log($location.path());
+        	return route === $location.path();
+   		};
 
 
 	});

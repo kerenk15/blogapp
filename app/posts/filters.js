@@ -18,14 +18,15 @@
   		};
 	});
 
-	app.filter('sidebarfilter' ,function(){
-		return function (data, obj , $filter ) {
+	app.filter('sidebarfilter' ,function($filter){
+
+		return function (data, obj ) {
 			var arr = [];
 
 			if (obj) {
 
 				if (obj.search){
-				return ($filter('filter')(data, obj.search));
+					return ($filter('filter')(data, obj.search));
 				}
 
 				if (obj.author){
@@ -38,8 +39,9 @@
 				}
 
 				if (obj.category){
-					console.log(obj.category , ($filter('filter')(data, obj.category)));
-					return ($filter('filter')(data, obj.category));
+					return $filter('filter')(data, {
+						tags: obj.category
+					});
 				}
 
 				if (obj.month){

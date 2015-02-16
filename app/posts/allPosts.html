@@ -1,11 +1,11 @@
 
 <section class="col-md-8">
-	<h1 class="page-header">All Posts</h1>
+	<h1 class="page-header">All {{postsLength}} Posts</h1>
 
 	<!-- Begin Post -->
 
 	<article
-			 ng-repeat="post in postsData | orderBy: 'date' : true"}}>
+			 ng-repeat="post in postsData | orderBy: 'date' : true">
 		<header>
 			<h2>
 				<a href="#/post/{{post.title | cleanTitle}}">{{post.title}}</a>
@@ -20,11 +20,6 @@
 				Posted on {{post.date | date : 'dd MMM , yyyy'}}
 			</p>
 		</header>
-		<hr>
-
-		<figure>
-			<img class="img-responsive" ng-src= "{{post.image}}" alt="">
-		</figure>
 		<hr>
 
 		<!-- Post Description -->

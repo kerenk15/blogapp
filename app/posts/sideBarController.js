@@ -4,16 +4,12 @@
 	var app = angular.module('blogApp');
 
 	app.controller('sideBarController', function( $scope , postsData, $filter , $location){
-		postsData
-			.success(function(data , status) {
+
+		postsData.get().then(function(data) {
    				$scope.postsData = data.posts;
    				$scope.navCount = $scope.count($scope.postsData);
 
-  			})
-			.error(function(data , status){
-				console.log(status , data);
-			});
-
+  			});
 
 
 		$scope.count = function(postsData){
@@ -87,6 +83,11 @@
 	       		$scope.text = '';
 	        }
     	};
+
+    	$scope.isActive = function(route) {
+        	return route === $location.path();
+   		};
+
 
 	});
 }());

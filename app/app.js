@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var app = angular.module('blogApp', ['ngRoute']);
+	var app = angular.module('blogApp', ['ngRoute' , 'ngSanitize']);
 
     // configure our routes
     app.config(function($routeProvider) {
@@ -26,7 +26,7 @@
             // route for the admin page
             .when('/admin', {
                 templateUrl : 'app/admin/admin.html',
-                controller  : ''
+                controller  : 'adminController'
             })
 
             .otherwise({
