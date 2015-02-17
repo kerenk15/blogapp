@@ -3,11 +3,13 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('postsController', function( $scope , postsData , $filter , $location ,  $routeParams){
+	app.controller('postsController', function( $scope , postsData , $filter , $location , $routeParams){
 
 		postsData.get().then(function(data) {
-				$scope.activeTab = $location.path().slice(1);
+
+				$scope.activeTab = postsData.activeTab();
 				console.log($scope.activeTab);
+
    				var filteredObj = $location.search();
    				// sideBar filter
 				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj));

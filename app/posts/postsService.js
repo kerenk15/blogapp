@@ -4,7 +4,7 @@
     var app = angular.module('blogApp');
 
 
-    app.factory('postsData', ['$http' , '$q', function($http , $q) {
+    app.factory('postsData', ['$http' , '$q', '$location', function($http , $q , $location) {
         var dataCache = {},
         	//declare the defer
         	defer = $q.defer(),
@@ -23,6 +23,10 @@
         return  {
         	get: function(){
         		return promise;
+        	},
+        	activeTab: function(){
+        		var tab = $location.path().slice(1);
+        		return tab;
         	}
         };
 

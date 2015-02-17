@@ -9,6 +9,9 @@
    				$scope.postsData = data.posts;
    				$scope.navCount = $scope.count($scope.postsData);
 
+				$scope.activeTab = postsData.activeTab();
+				console.log($scope.activeTab);
+
   			});
 
 

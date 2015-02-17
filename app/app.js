@@ -24,7 +24,7 @@
             })
 
             // route for the admin page
-            .when('/admin', {
+            .when('/admin/:pageNum?', {
                 templateUrl : 'app/admin/admin.html',
                 controller  : 'adminController'
             })
