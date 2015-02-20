@@ -83,9 +83,8 @@
 				<!-- Blog Categories Well -->
 				<div class="well">
 					<h3>Filter Posts</h3>
-{{activeTab}}
 					<div class="list-group">
-						<a href="#/{{activeTab}}" class="list-group-item" ng-class="{active:isActive('/posts')}">
+						<a href="#/{{activeTab.active}}" class="list-group-item" ng-class="{active:isActive('/posts')}">
 							<span class="badge">{{postsData.length}}</span>
 							Show All Posts
 						</a>
@@ -93,7 +92,7 @@
 					<div >
 						<h4><small class="glyphicon glyphicon-tag" ></small> Category</h4>
 						<div class="list-group">
-							<a href="#/{{activeTab}}?category={{key | lowercase | cleanTitle}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
+							<a href="#/{{activeTab.active}}?category={{key | lowercase | cleanTitle}}" class="list-group-item" ng-repeat="(key, value) in navCount.Tags">
 								<span class="badge">{{value}}</span>
 								 {{key}}
 							</a>
@@ -101,7 +100,7 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/{{activeTab}}?author={{key | lowercase | cleanTitle}}" class="list-group-item"  ng-repeat="(key, value) in navCount.Author" >
+							<a href="#/{{activeTab.active}}?author={{key | lowercase | cleanTitle}}" class="list-group-item"  ng-repeat="(key, value) in navCount.Author" >
 								<span class="badge">{{value}}</span>
 								{{key}}
 							</a>
@@ -112,7 +111,7 @@
 							<span href="#" class="list-group-item disabled" >
                       			{{key}}
 							</span>
-							<a href="#/{{activeTab}}?month={{key | lowercase}}" class="list-group-item" ng-repeat="(key, value) in value">
+							<a href="#/{{activeTab.active}}?month={{key | lowercase}}" class="list-group-item" ng-repeat="(key, value) in value">
 								<span class="badge">{{value}}</span>
 								{{key}}
 							</a>

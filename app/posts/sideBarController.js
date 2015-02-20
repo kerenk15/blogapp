@@ -3,17 +3,15 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('sideBarController', function( $scope , postsData, $filter , $location){
+	app.controller('sideBarController', function( $scope , postsData , activeNav , $filter , $location){
 
 		postsData.get().then(function(data) {
    				$scope.postsData = data.posts;
    				$scope.navCount = $scope.count($scope.postsData);
 
-				$scope.activeTab = postsData.activeTab();
-				console.log($scope.activeTab);
-
   			});
 
+		$scope.activeTab = activeNav.get();
 
 		$scope.count = function(postsData){
 			var author,

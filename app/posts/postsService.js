@@ -23,10 +23,28 @@
         return  {
         	get: function(){
         		return promise;
-        	},
+        	}/*,
         	activeTab: function(){
         		var tab = $location.path().slice(1);
+        		console.log('tab', tab);
         		return tab;
+        	}*/
+        };
+
+    }]);
+
+    app.factory('activeNav', ['$location', function($location) {
+        var activeTab = {
+        	active : $location.path().slice(1)
+        };
+
+        return  {
+        	get: function(){
+        		return activeTab;
+        	},
+        	set: function(tab){
+        		activeTab.active = tab;
+        		return activeTab;
         	}
         };
 

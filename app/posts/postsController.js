@@ -3,13 +3,10 @@
 
 	var app = angular.module('blogApp');
 
-	app.controller('postsController', function( $scope , postsData , $filter , $location , $routeParams){
+	app.controller('postsController', function( $scope , postsData ,activeNav ,  $filter , $location , $routeParams){
+
 
 		postsData.get().then(function(data) {
-
-				$scope.activeTab = postsData.activeTab();
-				console.log($scope.activeTab);
-
    				var filteredObj = $location.search();
    				// sideBar filter
 				$scope.postsData = ($filter('sidebarfilter')(data.posts , filteredObj));
@@ -20,6 +17,9 @@
 				 //show only 3 posts in a page
 				$scope.postsData = ($filter('slice')($scope.postsData , $scope.start , $scope.end));
   			});
+
+		var tab = $location.path().slice(1);
+		activeNav.set(tab);
 
 		$scope.postsInPage = function(postsData){
 			var  page = parseInt($routeParams.pageNum); // check on witch page are we
